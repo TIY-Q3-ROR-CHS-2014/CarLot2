@@ -1,0 +1,18 @@
+%p
+  %strong Make:
+  = @car.make
+%p
+  %strong Model:
+  = @car.model
+%p
+  %strong Year:
+  = @car.year
+%p
+  %strong Dealership
+  / = @car.dealership_id
+  - if @car.dealership
+    / @car.dealership
+    = link_to @dealership.try(:name), dealership_path(@dealership)
+
+/ @car.dealership
+= link_to 'Back', dealership_path(@dealership)

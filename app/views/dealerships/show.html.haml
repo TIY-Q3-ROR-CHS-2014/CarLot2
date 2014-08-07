@@ -1,0 +1,22 @@
+%h1 Show Dealership
+%strong
+  Name:
+= @dealership.name
+%br
+%strong
+  Description
+= @dealership.description
+%br
+= link_to "Create Car", new_dealership_car_path(@dealership)
+%ul
+  /= @dealership.cars.inspect
+  - @dealership.cars.each do |car|
+    %li
+      = link_to "#{car.make} | #{car.model}", dealership_car_path(@dealership, car)
+      |
+      = link_to "Edit", edit_dealership_car_path(@dealership, car)
+      |
+      = link_to "Delete", dealership_car_path(@dealership, car), method: :delete
+
+%br
+= link_to "Back", dealerships_path

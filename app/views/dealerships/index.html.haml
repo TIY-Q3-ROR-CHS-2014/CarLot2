@@ -1,0 +1,14 @@
+%h1 Dealerships
+
+= link_to "Create Dealership", new_dealership_path
+%ul
+  - @dealerships.each do |dealership|
+    %li
+      %strong
+        = link_to dealership.name, dealership_path(dealership)
+      = dealership.description
+      |
+      = link_to "Edit", edit_dealership_path(dealership)
+      |
+      = link_to "Delete", dealership_path(dealership), method: :delete
+= link_to "Back", root_path

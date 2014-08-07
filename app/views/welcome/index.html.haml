@@ -1,0 +1,21 @@
+%h1 Welcome#index
+%h2 
+  Hello world
+  %br
+  asdf
+
+%div.item#asdf
+  Find me in app/views/welcome/index.html.haml
+  %ul
+    %li Some text
+    %li Some more text
+    %li Some more more text
+  =@hello_world
+  - if 1+1==2
+    Some text
+  - 10.times do |x|
+    asdf
+    = x
+
+= link_to "Dealerships", dealerships_path
+
